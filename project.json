@@ -1,0 +1,22 @@
+{
+  "overview": "Atlas is a self-hosted personal travel tracker inspired by the Been app. It features a statistics dashboard showing countries visited, lived in, and wishlisted with continent progress, an interactive 3D globe, a US states map, a chronological timeline of trips, and a searchable country explorer with currency, language, and population details.",
+  "features": [
+    "Dashboard with travel stats: countries visited/lived/wishlisted, total trips, days abroad, continent progress",
+    "Interactive 3D globe showing visited countries with color highlights",
+    "US states map with color-coded visited/lived/wishlisted states",
+    "Chronological trip timeline with country flags, dates, and status badges",
+    "Searchable country explorer with currency, language, population for all ~195 countries",
+    "Add/edit/delete countries and trips with form-based entry"
+  ],
+  "category": "productivity",
+  "tags": [
+    "travel",
+    "tracker",
+    "map",
+    "globe",
+    "statistics",
+    "countries",
+    "self-hosted"
+  ],
+  "last_updated": "2026-05-09T08:58:07.012Z"
+}

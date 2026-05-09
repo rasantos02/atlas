@@ -1,0 +1,50 @@
+type TripPublic = 
+ record {
+   countryCode: CountryCode;
+   endDate: int;
+   id: TripId;
+   notes: opt text;
+   startDate: int;
+ };
+type TripId = nat;
+type TravelStatus = 
+ variant {
+   lived_in;
+   visited;
+   wishlisted;
+ };
+type Stats = 
+ record {
+   totalDaysAbroad: nat;
+   totalLivedIn: nat;
+   totalTrips: nat;
+   totalVisited: nat;
+   totalWishlisted: nat;
+ };
+type StateEntryPublic = 
+ record {
+   code: StateCode;
+   status: TravelStatus;
+ };
+type StateCode = text;
+type CountryEntryPublic = 
+ record {
+   code: CountryCode;
+   status: TravelStatus;
+ };
+type CountryCode = text;
+service : {
+  addTrip: (countryCode: CountryCode, startDate: int, endDate: int, notes:
+   opt text) -> (TripId);
+  deleteTrip: (id: TripId) -> (bool);
+  getStats: () -> (Stats) query;
+  listCountries: () -> (vec CountryEntryPublic) query;
+  listStates: () -> (vec StateEntryPublic) query;
+  listTrips: () -> (vec TripPublic) query;
+  removeCountry: (code: CountryCode) -> ();
+  removeState: (code: StateCode) -> ();
+  setCountry: (code: CountryCode, status: TravelStatus) -> ();
+  setState: (code: StateCode, status: TravelStatus) -> ();
+  updateTrip: (id: TripId, startDate: int, endDate: int, notes: opt text) ->
+   (bool);
+}

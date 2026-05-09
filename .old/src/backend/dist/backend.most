@@ -1,0 +1,41 @@
+// Version: 1.0.0
+type CountryCode__915921463 = Text;
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type StateCode__693884920 = Text;
+type TravelStatus__954188472 = {#lived_in; #visited; #wishlisted};
+type TripId__815041092 = Nat;
+type Trip__979624196 =
+  {
+    countryCode : CountryCode__915921463;
+    var endDate : Int;
+    id : TripId__815041092;
+    var notes : ?Text;
+    var startDate : Int
+  };
+actor {
+  stable countries :
+    {
+      var root :
+        Node__46230540<CountryCode__915921463, TravelStatus__954188472>;
+      var size : Nat__490723111
+    };
+  stable state : {var nextTripId : Nat};
+  stable states :
+    {
+      var root : Node__46230540<StateCode__693884920, TravelStatus__954188472>;
+      var size : Nat__490723111
+    };
+  stable trips :
+    {
+      var root : Node__46230540<TripId__815041092, Trip__979624196>;
+      var size : Nat__490723111
+    }
+};
